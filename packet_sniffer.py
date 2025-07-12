@@ -1,5 +1,3 @@
-# packet_sniffer.py
-
 from scapy.all import sniff
 from scapy.layers.inet import IP, TCP, UDP
 
@@ -20,6 +18,5 @@ def packet_callback(packet):
         print(f"Protocol       : {protocol}")
         print(f"Payload        : {bytes(packet.payload)}")
 
-# Start sniffing
 print("Starting packet capture... Press CTRL+C to stop.")
 sniff(prn=packet_callback, count=10)
